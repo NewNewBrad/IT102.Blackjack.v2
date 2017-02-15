@@ -34,23 +34,27 @@
 <p>Blackjack v.2!</p>
 
 <script type="text/javascript">
+
+var gameloop = function gameloop(){
 	var dealer = 0;
 	var total = 0;
 	var card = 0;
 	var hitMe = true;
 	var cardcount = 0;
-var gameloop = function gameloop(){
 
 
 var win_loss = function win_loss(){	
 		dealer = Math.ceil(11*Math.random()) + Math.ceil(11*Math.random());
-		if (total < 22 && total > dealer || cardcount == 5){ 
+		if (total == 21){
+		alert("BLACKJACK! You WIN!")
+		}
+		if (total < 22 && total > dealer ){ 
 		alert("Your hand is worth " + total + ". Dealer got " + dealer + "     YOU WIN");
 		}
 		if (total > 21){
 		alert("Your hand is worth " + total + ". You busted!")
 		}
-		if (cardcount ==5){
+		if (cardcount = 5){
 		alert("You win with a hand of " + cardcount + "." )
 		}
 		else {
