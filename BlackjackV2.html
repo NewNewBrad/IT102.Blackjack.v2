@@ -1,0 +1,88 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Brad Jones - IT102 NSC</title>
+<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+		text-align:center;
+	}
+	body{
+		background:#6D79A8;
+		font-size:100%;
+	}
+	div#wrapper{
+		height:400px;
+		width:600px;
+		margin:20px auto;
+		background:#C9D0F2;
+	}
+	form{
+		text-align:center;
+	}
+	button{
+		margin:15px;
+	}
+</style>
+
+</head>
+
+<body>
+<div id="wrapper">
+<p>Blackjack v.2!</p>
+
+<script type="text/javascript">
+	var dealer = 0;
+	var total = 0;
+	var card = 0;
+	var hitMe = true;
+	var cardcount = 0;
+var gameloop = function gameloop(){
+
+
+var win_loss = function win_loss(){	
+		dealer = Math.ceil(11*Math.random()) + Math.ceil(11*Math.random());
+		if (total < 22 && total > dealer || cardcount == 5){ 
+		alert("Your hand is worth " + total + ". Dealer got " + dealer + "     YOU WIN");
+		}
+		else {
+		alert("Your hand is worth " + total + ". Dealer got " + dealer + "      YOU LOSE");
+		}
+}//end of win_loss
+
+var draw_card = function draw_card(){
+	hitMe = prompt("Current total: " + total + "# of cards: , " +cardcount, "Take a card? Y/N");
+		if (cardcount == 5 || total == 21){
+			win_loss()
+		}
+		if (cardcount > 5 || total > 21){
+			win_loss()
+		}
+		if ( cardcount < 6 && total <22 && hitMe == "Y" || "y" || "Yes" || "yes" || "HitMe"){hitMe = true;
+		card = Math.ceil(11*Math.random());
+		total += card;
+		cardcount == cardcount++;
+		draw_card()
+		}
+ 		else {
+		win_loss()// Calculates winner when players is done drawing 
+		return
+		}//end HitMe
+}//end draw_card
+		draw_card()
+}//end gameloop
+
+gameloop()// Run the game
+</script>
+
+
+
+
+
+
+
+</div><!-- End of Wrapper -->
+</body>
+</html> 
