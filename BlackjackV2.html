@@ -47,6 +47,12 @@ var win_loss = function win_loss(){
 		if (total < 22 && total > dealer || cardcount == 5){ 
 		alert("Your hand is worth " + total + ". Dealer got " + dealer + "     YOU WIN");
 		}
+		if (total > 21){
+		alert("Your hand is worth " + total + ". You busted!")
+		}
+		if (cardcount ==5){
+		alert("You win with a hand of " + cardcount + "." )
+		}
 		else {
 		alert("Your hand is worth " + total + ". Dealer got " + dealer + "      YOU LOSE");
 		}
@@ -54,10 +60,7 @@ var win_loss = function win_loss(){
 
 var draw_card = function draw_card(){
 	hitMe = prompt("Current total: " + total + "# of cards: , " +cardcount, "Take a card? Y/N");
-		if (cardcount == 5 || total == 21){
-			win_loss()
-		}
-		if (cardcount > 5 || total > 21){
+		if (cardcount > 4 || total > 21){
 			win_loss()
 		}
 		if ( cardcount < 6 && total <22 && hitMe == "Y" || "y" || "Yes" || "yes" || "HitMe"){hitMe = true;
