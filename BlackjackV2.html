@@ -35,7 +35,7 @@
 
 <script type="text/javascript">
 
-var gameloop = function gameloop(){
+var gameLoop = function gameloop(){
 	var dealer = 0;
 	var total = 0;
 	var card = 0;
@@ -43,7 +43,7 @@ var gameloop = function gameloop(){
 	var cardcount = 0;
 
 
-var win_loss = function win_loss(){	
+var winLoss = function winLoss(){	
 		dealer = Math.ceil(11*Math.random()) + Math.ceil(11*Math.random());
 		if (total == 21){
 		alert("BLACKJACK! You WIN!")
@@ -62,7 +62,7 @@ var win_loss = function win_loss(){
 		}
 }//end of win_loss
 
-var draw_card = function draw_card(){
+var drawCard = function draw_card(){
 	hitMe = prompt("Current total: " + total + "# of cards: , " +cardcount, "Take a card? Y/N");
 		if (cardcount > 4 || total > 21){
 			win_loss()
